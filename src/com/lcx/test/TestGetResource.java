@@ -11,8 +11,6 @@ public class TestGetResource {
         System.out.println(TestGetResource.class.getClassLoader().getResource(""));
         System.out.println(TestGetResource.class.getClassLoader().getResource("/"));
         
-        
-        //skjdiadjiadaijdaks
     }
 
 
