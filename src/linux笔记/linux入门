@@ -1,0 +1,4 @@
+startx                                启动进入桌面
+shutdown -h now                       马上关机
+shutdown -r now                       马上重启
+reboot                                马上重启
