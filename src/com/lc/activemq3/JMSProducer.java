@@ -1,4 +1,4 @@
-package com.lc.activemq;
+package com.lc.activemq3;
 
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
@@ -16,7 +16,7 @@ public class JMSProducer {
 
 	private static final String  USERNAME=ActiveMQConnection.DEFAULT_USER;
 	private static final String  PASSWORD=ActiveMQConnection.DEFAULT_PASSWORD;
-	private static final String  BORKERURL=ActiveMQConnection.DEFAULT_BROKER_URL;
+	private static final String  BORKERURL="failover://tcp://123.206.176.229:61616";
 	private static final int messageNum=1;
 	//private static Logger logger;
 	
