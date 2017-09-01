@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<msgtext>
+	<grphdr>
+		<version>1.0.0</version>
+		<ref>${ref}</ref>
+		<buscd>NJB01201</buscd>
+	</grphdr>
+	<busitext>
+	</busitext>
+</msgtext>
