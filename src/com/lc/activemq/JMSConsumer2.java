@@ -32,7 +32,7 @@ public class JMSConsumer2 {
 			connection = connectionFactory.createConnection();
 			connection.start();
 			session=connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
-			destination=session.createQueue("FirstQueue");
+			destination=session.createQueue("FirstQueue2");
 			consumer=session.createConsumer(destination);
 			consumer.setMessageListener(new Listener());
 		} catch (JMSException e) {

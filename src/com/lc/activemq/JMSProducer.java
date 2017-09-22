@@ -4,20 +4,20 @@ import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
 import javax.jms.JMSException;
+import javax.jms.MapMessage;
 import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
-import org.apache.log4j.Logger;
 
 public class JMSProducer {
 
 	private static final String  USERNAME=ActiveMQConnection.DEFAULT_USER;
 	private static final String  PASSWORD=ActiveMQConnection.DEFAULT_PASSWORD;
 	private static final String  BORKERURL=ActiveMQConnection.DEFAULT_BROKER_URL;
-	private static final int messageNum=1;
+	private static final int messageNum=5;
 	//private static Logger logger;
 	
 	public static void main(String[] args) {
@@ -34,7 +34,7 @@ public class JMSProducer {
 			connection =connectionFactory.createConnection();//通过连接工厂获取连接
 			connection.start();//启动链接
 			session=connection.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE);//获取会话
-			destination=session.createQueue("FirstQueue");//创建一个队列
+			destination=session.createQueue("FirstQueue4");//创建一个队列
 			messageProducer=session.createProducer(destination);
 			sendMeaasge(session, messageProducer);
 			session.commit();
@@ -57,7 +57,9 @@ public class JMSProducer {
 	public static void sendMeaasge(Session session,MessageProducer messageProducer){
 		for (int i = 0; i < JMSProducer.messageNum; i++) {
 			try {
-				TextMessage textMessage=session.createTextMessage("Active MQ发送的消息："+"今晚有大雨");
+				TextMessage textMessage=session.createTextMessage("Active MQ发送的消息："+"hahaha");
+			
+			
 				System.out.println("发送消息："+"Active MQ发送的消息："+i);
 				messageProducer.send(textMessage);
 			} catch (JMSException e) {
