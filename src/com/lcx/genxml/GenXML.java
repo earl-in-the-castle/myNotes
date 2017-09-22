@@ -11,6 +11,7 @@ public class GenXML {
 		String fileName="template.vm";
 		Map<String,String> map = new HashMap<String,String>();
 		map.put("ref", "123456");
+		/*map.put("aaa", "");*/
         URL url = GenXML.class.getResource("");
     	
       
