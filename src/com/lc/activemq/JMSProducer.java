@@ -17,7 +17,7 @@ public class JMSProducer {
 	private static final String  USERNAME=ActiveMQConnection.DEFAULT_USER;
 	private static final String  PASSWORD=ActiveMQConnection.DEFAULT_PASSWORD;
 	private static final String  BORKERURL=ActiveMQConnection.DEFAULT_BROKER_URL;
-	private static final int messageNum=5;
+	private static final int messageNum=1;
 	//private static Logger logger;
 	
 	public static void main(String[] args) {
@@ -57,11 +57,12 @@ public class JMSProducer {
 	public static void sendMeaasge(Session session,MessageProducer messageProducer){
 		for (int i = 0; i < JMSProducer.messageNum; i++) {
 			try {
-				TextMessage textMessage=session.createTextMessage("Active MQ发送的消息："+"hahaha");
-			
-			
+				//TextMessage textMessage=session.createTextMessage("Active MQ发送的消息："+"hahaha");
+				MapMessage mapMessage=session.createMapMessage();
+				mapMessage.setString("1", "aaa");
+				mapMessage.setString("2", "bbb");
 				System.out.println("发送消息："+"Active MQ发送的消息："+i);
-				messageProducer.send(textMessage);
+				messageProducer.send(mapMessage);
 			} catch (JMSException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
