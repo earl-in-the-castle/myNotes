@@ -1,0 +1,70 @@
+tar -xvf file.tar //解压 tar包
+tar -xzvf file.tar.gz //解压tar.gz
+tar -cvf $(date +%Y%m%d).tar kyxl-app
+
+//指定具体不单于打包的文件夹
+tar -cvf $(date +%Y%m%d).tar --exclude=ROOT/upload ROOT
+
+
+----线上超管
+admin
+Edcg3346yuan
+
+----线上负载自动复制
+cp -r /usr/fifedu/tomcathttps/webapps/iplat/. /usr/fifedu/tomcat_iplat_8180/webapps/iplat/
+cp -r /usr/fifedu/tomcat_iplat_8180/webapps/iplat/. /usr/fifedu/tomcathttps/webapps/iplat/
+
+
+查看Tomcat 启动日志
+cd /usr/fifedu/tomcat7/logs
+tail -f catalina.out
+tail -200f catalina.out
+
+查看Tomcat进程
+ps -ef|grep tomcat 
+kill -9  pid
+
+
+
+---------
+122环境nginx
+/usr/local/nginx/sbin
+./nginx
+重启
+./nginx -s reload
+
+启动memcached
+  [root@fifedu120 bin]# /usr/bin/memcached -d -m 256 -u root -p 11211 -c 1024 –P /tmp/memcached.pid
+
+启动redis
+  cd /usr/local/redis-3.2.9
+  src/redis-server conf/r6390.conf &
+  redis-cli -p 6390 --raw
+
+启动 116 mongo
+    /usr/fifedu/mongodb2.6.6/bin/mongod --dbpath=/usr/fifedu/mongodbdata/mongodb_db
+
+------------------------------------------
+
+Linux终端执行shell脚本，提示权限不够的解决办法
+chmod 777 ./start.sh
+
+文本内容清空
+echo ""> authorized_keys
+
+文本追加内容
+cat ../id_rsa_103.pub > authorized_keys
+
+查看磁盘大小和剩余量
+df -h
+当前目录下查看每个文件夹磁盘占用大小
+du --max-depth=1 -h
+当前目录下所有的文件磁盘占用大小
+du -sh
+----------------------------
+
+
+
+
+
+
